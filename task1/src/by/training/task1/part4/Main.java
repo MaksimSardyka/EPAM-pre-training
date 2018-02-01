@@ -1,8 +1,8 @@
-package by.training.task1.fourth;
+package by.training.task1.part4;
 
 import java.util.Scanner;
 
-public class Fourth {
+public class Main {
 	static int numOfDigits(int num) {
 		int digits=0;
 		while(num>0)

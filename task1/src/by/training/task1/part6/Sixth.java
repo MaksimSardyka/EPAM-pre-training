@@ -1,4 +1,4 @@
-package by.training.task1.sixth;
+package by.training.task1.part6;
 
 import java.util.Scanner;
 

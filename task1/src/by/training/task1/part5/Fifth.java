@@ -1,4 +1,4 @@
-package by.training.task1.fifth;
+package by.training.task1.part5;
 import java.util.Scanner;
 
 public class Fifth {
