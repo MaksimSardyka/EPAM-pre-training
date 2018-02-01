@@ -1,4 +1,4 @@
-package by.training.task1.seventh;
+package by.training.task1.part7;
 
 import java.util.Scanner;
 
