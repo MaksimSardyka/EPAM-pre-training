@@ -1,4 +1,4 @@
-package by.training.task1.part2;
+package part4;
 
 public class View {
 	public static void print(String msg) {
