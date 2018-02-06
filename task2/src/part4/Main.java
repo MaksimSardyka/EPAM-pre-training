@@ -6,9 +6,8 @@ public class Main {
 		int month=2;
 		int year=2016;
 		
-		int [] today = {day, month,year};
-		int [] tomorrow = MyCalendar.addOneDay(today);
+		String tomorrow = MyCalendar.addOneDay(day, month, year);
 		
-		View.print(tomorrow[0] +"-"+ tomorrow[1] +"-"+ tomorrow[2] + "\n");
+		View.print(tomorrow + "\n");
 	}
 }

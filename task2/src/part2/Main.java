@@ -2,7 +2,7 @@ package part2;
 
 public class Main {
 	public static void main(String [] args) {
-	Character letter = 'U';
+	char letter = 'I';
 	
 	boolean result1 = Vowel.isVowel1(letter);
 	boolean result2 = Vowel.isVowel2(letter);

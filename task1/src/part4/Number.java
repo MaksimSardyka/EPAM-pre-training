@@ -11,12 +11,10 @@ public class Number {
 	}
 	public static boolean checkInc(int num){
 		int [] digits = toArray(num);
-		boolean result=digits[0]<digits[1] ? (digits[1]<digits[2]? (digits[2]<digits[3]?true:false) :false) : false;
-		return(result);
+		return digits[0]<digits[1] ? (digits[1]<digits[2]? (digits[2]<digits[3]?true:false) :false) : false;
 	}
 	public static boolean checkDec(int num){
 		int [] digits = toArray(num);
-		boolean result=digits[3]<digits[2] ? (digits[2]<digits[1]? (digits[1]<digits[0]?true:false) :false) : false;
-		return(result);
+		return digits[3]<digits[2] ? (digits[2]<digits[1]? (digits[1]<digits[0]?true:false) :false) : false;
 	}
 }

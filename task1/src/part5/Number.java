@@ -12,10 +12,10 @@ public class Number {
 	}
 	static int sumDigits(int num){
 		int [] digits=toArray(num);
-		return(digits[0]+digits[1]+digits[2]+digits[3]+digits[4]);
+		return digits[0]+digits[1]+digits[2]+digits[3]+digits[4];
 	}
 	static int mulDigits(int num){
 		int [] digits=toArray(num);
-		return(digits[0]*digits[1]*digits[2]*digits[3]*digits[4]);
+		return digits[0]*digits[1]*digits[2]*digits[3]*digits[4];
 	}
 }

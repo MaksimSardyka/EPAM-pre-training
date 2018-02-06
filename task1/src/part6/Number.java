@@ -2,10 +2,10 @@ package part6;
 
 public class Number {
 	public static double calculateAvgArithm(int num) {
-		return(Number.sumDigits(num)/6.0);
+		return Number.sumDigits(num)/6.0;
 	}
 	public static double calculateAvgGeom(int num) {
-		return(Math.pow(Number.mulDigits(num), 1.0/6.0));
+		return Math.pow(Number.mulDigits(num), 1.0/6.0);
 	}
 	public static int [] toArray(int num) {
 		int digit1 = num/100000;
@@ -19,10 +19,10 @@ public class Number {
 	}
 	static int sumDigits(int num){
 		int [] digits=toArray(num);
-		return(digits[0]+digits[1]+digits[2]+digits[3]+digits[4]+digits[5]);
+		return digits[0]+digits[1]+digits[2]+digits[3]+digits[4]+digits[5];
 	}
 	static int mulDigits(int num){
 		int [] digits=toArray(num);
-		return(digits[0]*digits[1]*digits[2]*digits[3]*digits[4]+digits[5]);
+		return digits[0]*digits[1]*digits[2]*digits[3]*digits[4]+digits[5];
 	}
 }
