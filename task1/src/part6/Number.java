@@ -1,11 +1,13 @@
 package part6;
 
 public class Number {
+	static final double NUMBER_OF_DIGITS = 6.0;
+	
 	public static double calculateAvgArithm(int num) {
-		return Number.sumDigits(num)/6.0;
+		return Number.sumDigits(num)/NUMBER_OF_DIGITS;
 	}
 	public static double calculateAvgGeom(int num) {
-		return Math.pow(Number.mulDigits(num), 1.0/6.0);
+		return Math.pow(Number.mulDigits(num), 1.0/NUMBER_OF_DIGITS);
 	}
 	public static int [] toArray(int num) {
 		int digit1 = num/100000;

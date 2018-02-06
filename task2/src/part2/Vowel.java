@@ -16,7 +16,7 @@ public class Vowel{
 	
 	public static boolean isVowel3(char letter){
 		letter = Character.toLowerCase(letter);
-			return (letter == ARR_VOWELS[0] || letter == ARR_VOWELS[1] || letter == ARR_VOWELS[2] || letter == ARR_VOWELS[3] || letter == ARR_VOWELS[4] || letter == ARR_VOWELS[5]);
+			return letter == ARR_VOWELS[0] || letter == ARR_VOWELS[1] || letter == ARR_VOWELS[2] || letter == ARR_VOWELS[3] || letter == ARR_VOWELS[4] || letter == ARR_VOWELS[5];
 	}
 	public static boolean isVowel4(char letter){
 		letter = Character.toLowerCase(letter);
