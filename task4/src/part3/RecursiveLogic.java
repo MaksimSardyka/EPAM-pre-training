@@ -6,6 +6,7 @@ public class RecursiveLogic {
 	public static long calcSumDigit(long n) {
 		int sumDigit = 0;
 		long result;
+		
 		if (n > 0) {
 			result = n % BASE + calcSumDigit(n / BASE);
 		} else {

@@ -9,6 +9,7 @@ public class Fibo {
 
 	public static long findFiboNumber(int orderNumber) {
 		long result;
+		
 		if (orderNumber <= SECOND_ELEMENT_INDEX) {
 			result = WRONG_INPUT_RESULT;
 			if (orderNumber == FIRST_ELEMENT_INDEX) {

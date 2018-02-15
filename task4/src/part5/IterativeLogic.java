@@ -7,7 +7,6 @@ public class IterativeLogic {
 	public static String hanoi(int numberRing, char sourceTower, char targetTower, char temporaryTower) {
 		char[] towers = { sourceTower, targetTower, temporaryTower };
 		StringBuilder str = new StringBuilder();
-
 		int limit = (int) Math.pow(2, numberRing) - 1; // number of all iterations
 
 		for (int i = 0; i < limit; i++) {
@@ -25,6 +24,7 @@ public class IterativeLogic {
 	private static int getDisk(int i) { // which disk I will move
 		int counter;
 		int x = i + 1;
+		
 		for (counter = 0; x % 2 == 0; counter++) {
 			x /= 2;
 		}

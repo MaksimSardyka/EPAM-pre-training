@@ -5,6 +5,7 @@ public class IterativeLogic {
 
 	public static long calcSumDigit(long n) {
 		int sumDigit = 0;
+
 		while (n > 0) {
 			sumDigit += n % BASE;
 			n /= BASE;
