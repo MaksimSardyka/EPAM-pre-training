@@ -1,7 +1,7 @@
 package part6;
 
 public class View {
-	public static void print(String msg) {
+	public static void print(Object msg) {
 		System.out.print(msg);
 	}
 }

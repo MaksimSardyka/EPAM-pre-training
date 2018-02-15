@@ -5,14 +5,8 @@ public class RecursiveLogic {
 
 	private static long calcSumDigit(long n) {
 		int sumDigit = 0;
-		long result;
-		
-		if (n > 0) {
-			result = n % BASE + calcSumDigit(n / BASE);
-		} else {
-			result = sumDigit;
-		}
-		return result;
+
+		return n > 0 ? n % BASE + calcSumDigit(n / BASE) : sumDigit;
 	}
 
 	public static boolean equals(long n, int s) {
