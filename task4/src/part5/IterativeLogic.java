@@ -10,21 +10,21 @@ public class IterativeLogic {
 		int limit = (int) Math.pow(2, numberRing) - 1; // number of all iterations
 
 		for (int i = 0; i < limit; i++) {
-			int currentDisk = getDisk(i); // disk that I move on this iteration
-			int source = (calcMovements(i, currentDisk) * getDirection(currentDisk, numberRing)) % towers.length; // find
+			int currentDisk = findDisk(i); // disk that I move on this iteration
+			int source = (calcMovements(i, currentDisk) * findDirection(currentDisk, numberRing)) % towers.length; // find
 																													// source
 																													// tower
-			int target = (source + getDirection(currentDisk, numberRing)) % towers.length; // find target tower
+			int target = (source + findDirection(currentDisk, numberRing)) % towers.length; // find target tower
 			str.append(towers[source]).append(TOWER_SEPARATOR).append(towers[target]).append(NEXT_LINE_SYMBOL);
 		}
 
 		return str.toString();
 	}
 
-	private static int getDisk(int i) { // which disk I will move
+	private static int findDisk(int i) { // which disk I will move
 		int counter;
 		int x = i + 1;
-		
+
 		for (counter = 0; x % 2 == 0; counter++) {
 			x /= 2;
 		}
@@ -38,7 +38,7 @@ public class IterativeLogic {
 		return (i + 1) / 2;
 	}
 
-	private static int getDirection(int currentDisk, int numberRing) { // direction for this disk: clockwise=1,
+	private static int findDirection(int currentDisk, int numberRing) { // direction for this disk: clockwise=1,
 																		// anticlockwise=2
 		return 2 - (numberRing + currentDisk) % 2;
 	}

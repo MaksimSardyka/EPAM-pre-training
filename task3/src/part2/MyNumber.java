@@ -5,6 +5,7 @@ public class MyNumber {
 
 	public static int findMaxDigit(long number) {
 		int digit = 1;
+		
 		while (number > 0) {
 			if (number % BASE > digit) {
 				digit = (int) number % BASE;
@@ -16,6 +17,7 @@ public class MyNumber {
 
 	public static int findLength(long number) {
 		int length = 1;
+		
 		while (number / BASE > 0) {
 			number /= BASE;
 			length++;
@@ -25,6 +27,7 @@ public class MyNumber {
 
 	public static boolean isPalindrome(long number) {
 		int length = findLength(number);
+		
 		for (int i = length / 2; i >= 0; i--) {// compare digits starting from the middle
 			int left = (int) number / (int) Math.pow(BASE, length - i - 1) % BASE;
 			int right = (int) number / (int) Math.pow(BASE, i) % BASE;
@@ -70,6 +73,7 @@ public class MyNumber {
 
 	public static int countUniqueDigits(long number) {
 		int counter = 0;
+		
 		for (int i = 0; i < BASE; i++) {
 			long num = number;
 			while (num > 0) {

@@ -3,7 +3,7 @@ package part3;
 public class IterativeLogic {
 	private static final int BASE = 10;
 
-	public static long calcSumDigit(long n) {
+	private static long calcSumDigit(long n) {
 		int sumDigit = 0;
 
 		while (n > 0) {
