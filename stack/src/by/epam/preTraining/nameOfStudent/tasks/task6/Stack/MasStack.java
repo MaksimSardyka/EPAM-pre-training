@@ -18,24 +18,17 @@ public class MasStack<T> implements Stackable{
 	protected T[] masStorage;
 	private int size;//current size
 
-	
+	/*
+	 * Default constructor 
+	 */
 	@SuppressWarnings("unchecked")
 	public MasStack(){
 		this.masStorage =(T[]) new Object [INITIAL_SIZE];
 		this.size = 0;
 	}
-	/*
-	 * Copy constructor
-	 * */
-	@SuppressWarnings("unchecked")
-	public MasStack(MasStack<T> old){
-		this.masStorage =(T[]) new Object [old.size];
-		copy(old.masStorage, this.masStorage);
-		this.size = old.size();
-	}
 	
 	/*
-	 * Constructor with parameters
+	 * Constructor with parameter
 	 */
 	@SuppressWarnings("unchecked")
 	public MasStack(int initSize){
@@ -43,10 +36,20 @@ public class MasStack<T> implements Stackable{
 		this.size = 0;
 	}
 	
+	/*
+	 * Copy constructor
+	 */
+	@SuppressWarnings("unchecked")
+	public MasStack(MasStack<T> old){
+		this.masStorage =(T[]) new Object [old.size];
+		copy(old.masStorage, this.masStorage);
+		this.size = old.size();
+	}
+	
 	
 	/*
 	 * Copy stack elements
-	 * */
+	 */
 	private void copy(T[] from,T[] to) {
 		if(to.length>=from.length) {
 			for(int i = from.length-1; i >= 0; i--){
@@ -60,17 +63,19 @@ public class MasStack<T> implements Stackable{
 	
 	/*
 	 * add space if needed
-	 * */
+	 */
 	private void increaseSize(int additionalSize) {
+		@SuppressWarnings("unchecked")
 		T[] mas = (T[]) new Object[this.masStorage.length + additionalSize];
 		copy(this.masStorage, mas);
 		this.masStorage = mas;
-		this.size += additionalSize;
 	}
-	
+
+	@SuppressWarnings("unchecked")
+	@Override
 	public void push(Object newElement) {
 		if(isFull()){
-			increaseSize(1);
+			increaseSize(INCREASE_STEP);
 		}
 		this.masStorage[size] = (T) newElement;
 		size++;
@@ -80,7 +85,7 @@ public class MasStack<T> implements Stackable{
 	public T pop() {
 		T result = null;
 		if(this.size!=0){
-			result = this.masStorage[this.size-1];
+				result = this.masStorage[this.size-1];
 			this.masStorage[this.size-1] = null;
 			this.size--;
 		} else {
