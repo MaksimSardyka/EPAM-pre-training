@@ -16,16 +16,12 @@ public class Logic {
 	 *
 	 * @version 1.00 23 Feb 2018
 	 * @author Maksim Sardyka
-	 */
-	private static int BASE = 10;
-			
-	public static boolean isPalindrome(long number, int length) {
+	 */		
+	public static boolean isPalindrome(int [] number) {
 
 		/*compare digits starting from the middle*/
-		for (int i = length / 2; i >= 0; i--) {
-			int left = (int) number / (int) Math.pow(BASE, length - i - 1) % BASE;
-			int right = (int) number / (int) Math.pow(BASE, i) % BASE;
-			if (left != right) {
+		for (int i = (number.length-1) / 2; i >= 0; i--) {
+			if (number[i] != number[number.length-i-1]) {
 				return false;
 			}
 		}

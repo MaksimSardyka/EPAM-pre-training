@@ -12,7 +12,7 @@ package by.epam.preTraining.nameOfStudent.tasks.task6.stack;
 
 import by.epam.preTraining.nameOfStudent.tasks.task6.exception.StackOutOfBoundsException;
 
-public class MasStack<T> implements Stackable {
+public class MasStack<T> implements Stackable<T> {
 	/**
 	 * Container class
 	 *

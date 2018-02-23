@@ -23,20 +23,18 @@ public class Controller {
 	 */
 	public static void main(String[] args) {
 		MasStack<Integer> stack = new MasStack<>();
-		int number = 1234554321;
+		long number = 123454321;
 
 		while (number > 0) {
 			stack.push((int) (number % 10));
 			number /= 10;
 		}
 
-		long myNumber = 0;
-		int length = stack.size();
+		int myNumber[] = new int[stack.size()];
 
-		while (!stack.isEmpty()) {
-			myNumber = myNumber * 10 + (int) stack.pop();
+		for (int i = myNumber.length-1; i >= 0; i--) {
+			myNumber[i] = (int) stack.pop();
 		}
-
-		View.print(myNumber + (Logic.isPalindrome(myNumber, length) ? " is a palindrome" : " isn't a palindrome"));
+		View.print(Logic.isPalindrome(myNumber) ? "is a palindrome" : "isn't a palindrome");
 	}
 }
