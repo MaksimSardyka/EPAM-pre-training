@@ -27,7 +27,6 @@ public class MasStack<T> implements Stackable<T> {
 	/*
 	 * Default constructor
 	 */
-	@SuppressWarnings("unchecked")
 	public MasStack() {
 		this.masStorage = (T[]) new Object[INITIAL_SIZE];
 		this.size = 0;
@@ -76,9 +75,8 @@ public class MasStack<T> implements Stackable<T> {
 		this.masStorage = mas;
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
-	public void push(Object newElement) {
+	public void push(T newElement) {
 		if (isFull()) {
 			increaseSize(INCREASE_STEP);
 		}
