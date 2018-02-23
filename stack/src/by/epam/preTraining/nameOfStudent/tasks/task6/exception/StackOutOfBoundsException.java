@@ -9,9 +9,9 @@
  */
 
 
-package by.epam.preTraining.nameOfStudent.tasks.task6.Stack;
+package by.epam.preTraining.nameOfStudent.tasks.task6.exception;
 
-import by.epam.preTraining.nameOfStudent.tasks.task6.View.View;
+import by.epam.preTraining.nameOfStudent.tasks.task6.view.View;
 
 public class StackOutOfBoundsException extends Exception {
 

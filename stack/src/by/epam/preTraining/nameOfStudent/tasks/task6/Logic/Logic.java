@@ -8,22 +8,21 @@
  * @author Maskim Sardyka
  */
 
-package by.epam.preTraining.nameOfStudent.tasks.task6.Logic;
-
-import by.epam.preTraining.nameOfStudent.tasks.task6.Stack.MasStack;
+package by.epam.preTraining.nameOfStudent.tasks.task6.logic;
 
 public class Logic {
-	private static int BASE = 10;
-
 	/**
-	 * Logic implementation
+	 * checks is palindrome
 	 *
-	 * @version 1.00 23 февр. 2018 г.
+	 * @version 1.00 23 Feb 2018
 	 * @author Maksim Sardyka
 	 */
+	private static int BASE = 10;
+			
 	public static boolean isPalindrome(long number, int length) {
 
-		for (int i = length / 2; i >= 0; i--) {// compare digits starting from the middle
+		/*compare digits starting from the middle*/
+		for (int i = length / 2; i >= 0; i--) {
 			int left = (int) number / (int) Math.pow(BASE, length - i - 1) % BASE;
 			int right = (int) number / (int) Math.pow(BASE, i) % BASE;
 			if (left != right) {

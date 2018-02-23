@@ -9,7 +9,7 @@
  */
 
 
-package by.epam.preTraining.nameOfStudent.tasks.task6.Stack;
+package by.epam.preTraining.nameOfStudent.tasks.task6.stack;
 
 public interface Stackable<T> {
 	/* метод добавляет элемент в конец стека, который называется его вершиной; */
