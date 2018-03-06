@@ -13,7 +13,7 @@ package by.epam.task5.vehicles;
 import by.epam.task5.moveable.Moveable;
 import by.epam.task5.parkable.Parkable;
 
-public class Vehicle {
+public class Vehicle implements Comparable<Vehicle>{
 
     Moveable moveBehavior;
     Parkable parkBehavior;
@@ -157,5 +157,16 @@ public class Vehicle {
     public String toString() {
 	return "Vehicle [weight=" + weight + ", speed=" + speed + ", colorCode=" + colorCode + ", brand=" + brand
 		+ ", perDayCost=" + perDayCost + "]";
+    }
+    
+    @Override
+    public int compareTo(Vehicle o) {
+	int result = 0;
+	if(this.perDayCost < o.getPerDayCost()) {
+	    result = -1;
+	} else if(this.perDayCost > o.getPerDayCost()){
+	    result = 1;
+	}
+	return result;
     }
 }

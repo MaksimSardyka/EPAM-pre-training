@@ -10,9 +10,12 @@
 package by.epam.task5.parking;
 
 import java.util.Random;
+
+import by.epam.task5.builder.VehicleBuilder;
 import by.epam.task5.vehicles.Boat;
 import by.epam.task5.vehicles.Car;
 import by.epam.task5.vehicles.MotorBoat;
+import by.epam.task5.vehicles.Vehicle;
 import by.epam.task5.view.View;
 
 public class TestMain {
@@ -34,8 +37,7 @@ public class TestMain {
 	for (int i = VEHICLES_NUMBER - 1; i >= 0; i--) {
 	    switch (rand.nextInt(3)) {
 	    case 0:
-		clients.addNewVehicle(new Boat());
-		clients.findVehicleByIndex(clients.getAmoungtVehicle() - 1).setPerDayCost(BOAT_PER_DAY_PRICE);
+		clients.addNewVehicle((Boat)new VehicleBuilder().perDayCost(rand.nextInt(BOAT_PER_DAY_PRICE)).buildVehicle());
 		break;
 	    case 1:
 		/* Create vehicle with random fuel tank volume */
