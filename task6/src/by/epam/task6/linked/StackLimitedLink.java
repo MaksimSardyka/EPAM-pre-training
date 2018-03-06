@@ -11,9 +11,9 @@
 package by.epam.task6.linked;
 
 import by.epam.task6.exceptions.ThisElementDidntExistsException;
-import by.epam.task6.interfaces.StackUnlimitedable;
+import by.epam.task6.interfaces.StackLimitedable;
 
-public class StackUnlimitedLink<T> extends Adt<T> implements StackUnlimitedable<T>{
+public class StackLimitedLink<T> extends AdtLink<T> implements StackLimitedable<T> {
     /**
      * Class description goes here.
      *
@@ -23,9 +23,10 @@ public class StackUnlimitedLink<T> extends Adt<T> implements StackUnlimitedable<
      *
      * @author Maksim Sardyka
      */
+    private final int MAX_SIZE = 200;
 
     /* Constructor */
-    public StackUnlimitedLink() {
+    public StackLimitedLink() {
 	first = null;
 	size = 0;
     }
@@ -43,7 +44,7 @@ public class StackUnlimitedLink<T> extends Adt<T> implements StackUnlimitedable<
     }
 
     /* Function to pop an element from the stack */
-    public T pop() throws ThisElementDidntExistsException  {
+    public T pop() throws ThisElementDidntExistsException {
 	if (isEmpty())
 	    throw new ThisElementDidntExistsException("Pop: list is empty");
 	Node<T> ptr = first;
@@ -52,18 +53,7 @@ public class StackUnlimitedLink<T> extends Adt<T> implements StackUnlimitedable<
 	return ptr.getData();
     }
 
-//  /* Function to display the status of the stack */
-//  public void display() {
-//	System.out.print("\nStack = ");
-//	if (size == 0) {
-//	    System.out.print("Empty\n");
-//	    return;
-//	}
-//	Node<T> ptr = top;
-//	while (ptr != null) {
-//	    System.out.print(ptr.getData() + " ");
-//	    ptr = ptr.getLink();
-//	}
-//	System.out.println();
-//  }
+    public boolean isFull() {
+	return (size == MAX_SIZE);
+    }
 }

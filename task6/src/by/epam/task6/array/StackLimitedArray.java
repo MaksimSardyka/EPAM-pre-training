@@ -18,13 +18,13 @@ import by.epam.task6.exceptions.NoFreeSpaceException;
 import by.epam.task6.exceptions.ThisElementDidntExistsException;
 import by.epam.task6.interfaces.StackLimitedable;
 
-class StackLimitedArray<T> extends Adt<T> implements StackLimitedable<T> {
+public class StackLimitedArray<T> extends AdtArray<T> implements StackLimitedable<T> {
 
     private int MAX_SIZE = 200;
 
     /* Constructor */
-    public StackLimitedArray(int n) {
-	arr = (T[]) new Object[n];
+    public StackLimitedArray() {
+	arr = (T[]) new Object[DEFAULT_SIZE];
     }
 
     /* Function to add an element to the stack */

@@ -1,5 +1,5 @@
 /*
- * QueueLimited.java
+ * Queue.java
  *
  * @version 1.00
  *
@@ -10,11 +10,10 @@
 
 package by.epam.task6.array;
 
-import by.epam.task6.exceptions.NoFreeSpaceException;
 import by.epam.task6.exceptions.ThisElementDidntExistsException;
 import by.epam.task6.interfaces.QueueUnlimitedable;
 
-class QueueUnlimited<T> extends Adt<T> implements QueueUnlimitedable<T> {
+public class QueueUnlimitedArray<T> extends AdtArray<T> implements QueueUnlimitedable<T> {
     /**
      * This is queue(FIFO) implementation
      *
@@ -24,29 +23,22 @@ class QueueUnlimited<T> extends Adt<T> implements QueueUnlimitedable<T> {
      *
      * @author Maksim Sardyka
      */
-    private final int MAX_SIZE = 200;
     
     /* Constructor */
-    public QueueUnlimited() {
+    public QueueUnlimitedArray() {
 	arr = (T[]) new Object[DEFAULT_SIZE];
     }
 
     // Add elements to the queue
-    public void enqueue(T newElement) throws NoFreeSpaceException {
-	if (isFull()) {
-	    throw new NoFreeSpaceException("Enqueue: stack is full");
-	}
+    public void enqueue(T newElement) {
 	if (arr.length == size) {
 	    resize(size + INCREASE_SIZE_STEP);
 	}
 	arr[++size] = newElement;
     }
 
-    public boolean isFull() {
-	return (size == MAX_SIZE);
-    }
-
     /* Function to remove front element from the queue */
+    // Dequeue method to remove head
     public T dequeue() throws ThisElementDidntExistsException {
 	T result;
 
@@ -66,6 +58,6 @@ class QueueUnlimited<T> extends Adt<T> implements QueueUnlimitedable<T> {
     public T peek() throws ThisElementDidntExistsException {
 	if (isEmpty())
 	    throw new ThisElementDidntExistsException("Peek: queue is empty");
-	return arr[size - 1];
+	return arr[size-1];
     }
 }

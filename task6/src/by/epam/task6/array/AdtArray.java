@@ -10,7 +10,7 @@
 
 package by.epam.task6.array;
 
-public class Adt<T> {
+public class AdtArray<T> {
     /**
      * Base class with common for Stack and Queue methods
      *

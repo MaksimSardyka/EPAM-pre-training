@@ -10,11 +10,10 @@
 
 package by.epam.task6.linked;
 
-import by.epam.task6.exceptions.NoFreeSpaceException;
 import by.epam.task6.exceptions.ThisElementDidntExistsException;
-import by.epam.task6.interfaces.QueueLimitedable;
+import by.epam.task6.interfaces.QueueUnlimitedable;
 
-class QueueLimitedLink<T> extends Adt<T> implements QueueLimitedable<T> {
+public class QueueUnlimitedLink<T> extends AdtLink<T> implements QueueUnlimitedable<T> {
     /**
      * This is queue(FIFO) implementation
      *
@@ -24,22 +23,18 @@ class QueueLimitedLink<T> extends Adt<T> implements QueueLimitedable<T> {
      *
      * @author Maksim Sardyka
      */
-    private final int MAX_SIZE = 200;
     
     protected Node<T> tail;
 
     /* Constructor */
-    public QueueLimitedLink() {
+    public QueueUnlimitedLink() {
 	first = null;
 	tail = null;
 	size = 0;
     }
 
     /* Function to insert an element to the queue(in tail) */
-    public void enqueue(T data) throws NoFreeSpaceException {
-	if (isFull()) {
-	    throw new NoFreeSpaceException("Enqueue: queue is full");
-	}
+    public void enqueue(T data) {
 	Node<T> nptr = new Node<T>(data, null);
 	if (tail == null) {
 	    first = nptr;
@@ -61,9 +56,5 @@ class QueueLimitedLink<T> extends Adt<T> implements QueueLimitedable<T> {
 	    tail = null;
 	size--;
 	return ptr.getData();
-    }
-    
-    public boolean isFull() {
-	return (size == MAX_SIZE);
     }
 }

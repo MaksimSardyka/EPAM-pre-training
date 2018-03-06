@@ -14,14 +14,13 @@ package by.epam.task6.array;
 
 import java.util.*;
 
+import by.epam.task6.exceptions.ThisElementDidntExistsException;
 import by.epam.task6.interfaces.StackUnlimitedable;
 
-class StackUnlimitedArray<T> extends Adt<T> implements StackUnlimitedable<T> {
-    private final int MAX_SIZE = 100;
-
+public class StackUnlimitedArray<T> extends AdtArray<T> implements StackUnlimitedable<T> {
     /* Constructor */
-    public StackUnlimitedArray(int n) {
-	arr = (T[]) new Object[n];
+    public StackUnlimitedArray() {
+	arr = (T[]) new Object[DEFAULT_SIZE];
     }
 
     /* Function to add an element to the stack */
@@ -34,16 +33,16 @@ class StackUnlimitedArray<T> extends Adt<T> implements StackUnlimitedable<T> {
     }
 
     /* Function to delete an element from the stack */
-    public T pop() {
-	if (size == arr.length)
-	    throw new NoSuchElementException("Underflow Exception");
+    public T pop() throws ThisElementDidntExistsException {
+	if (size == 0)
+	    throw new ThisElementDidntExistsException("Pop: stack is empty");
 	return arr[--size];
     }
 
     /* Function to check the top element of the stack */
-    public T peek() {
-	if (size == arr.length)
-	    throw new NoSuchElementException("Underflow Exception");
+    public T peek() throws ThisElementDidntExistsException {
+	if (size == 0)
+	    throw new ThisElementDidntExistsException("Peek: stack is empty");
 	return arr[size - 1];
     }
 }

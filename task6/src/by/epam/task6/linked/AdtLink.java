@@ -12,7 +12,7 @@ package by.epam.task6.linked;
 
 import by.epam.task6.exceptions.ThisElementDidntExistsException;
 
-public class Adt<T> {
+public class AdtLink<T> {
     /**
      * Base class with common for Stack and Queue methods
      *
