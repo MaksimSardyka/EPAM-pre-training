@@ -12,7 +12,7 @@ package task8;
 
 public class Searcher<T extends Object & Comparable<? super T>> {
     /**
-     * Class description goes here.
+     * Search algorithm implementation
      *
      * @version 1.00
      *

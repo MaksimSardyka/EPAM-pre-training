@@ -17,7 +17,7 @@ import by.epam.task5.builder.VehicleBuilder;
 
 public class Main {
     /**
-     * Class description goes here.
+     * Main test class
      *
      * @version 1.00
      *

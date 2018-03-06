@@ -12,7 +12,7 @@ package by.epam.task7.tree;
 
 public class BinaryTree<T extends Object & Comparable<? super T>> implements BinaryTreeable<T> {
     /**
-     * Class description goes here.
+     * Binary tree implementation
      *
      * @version 1.00
      *

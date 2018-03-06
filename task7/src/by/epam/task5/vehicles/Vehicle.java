@@ -3,7 +3,7 @@
  *
  * @version 1.00
  *
- * 23 Feb 2018
+ * @since 23 February 2018
  *
  * @author Maksim Sardyka
  */

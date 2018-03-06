@@ -1,5 +1,5 @@
 /*
- * Classname
+ * View
  *
  * Version onformation
  *

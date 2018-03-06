@@ -12,7 +12,7 @@ package task8;
 
 public class Sorter<T extends Object & Comparable<? super T>> {
     /**
-     * Class description goes here.
+     * Sort algorithm implementation
      *
      * @version 1.00
      *

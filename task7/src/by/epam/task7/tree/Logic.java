@@ -18,7 +18,7 @@ import by.epam.task7.view.View;
 
 public class Logic {
     /**
-     * Class description goes here.
+     * Test logic implementation
      *
      * @version 1.00
      * 

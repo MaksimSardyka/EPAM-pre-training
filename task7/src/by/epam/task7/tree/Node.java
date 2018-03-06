@@ -12,7 +12,7 @@ package by.epam.task7.tree;
 
 public class Node<T extends Object & Comparable<? super T>> {
     /**
-     * Class description goes here.
+     * Node element
      *
      * @version 1.00
      *
